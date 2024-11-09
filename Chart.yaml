@@ -23,7 +23,7 @@ version: 1.0.0
 # It is recommended to use it with quotes.
 appVersion: "10.5.0"
 
-dependencies:
-  - name: gitea
-    version: "10.5.0"
-    repository: "https://dl.gitea.com/charts/"
+# dependencies:
+#   - name: gitea
+#     version: "10.5.0"
+#     repository: "https://dl.gitea.com/charts/"
