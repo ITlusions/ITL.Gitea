@@ -438,7 +438,9 @@ gitea:
         SSH_PORT: 22 # rootful image
         SSH_LISTEN_PORT: 2222 # rootless image
     #
-    #  security:
+      security:
+        REVERSE_PROXY_TRUSTED_PROXIES: "*"
+        REVERSE_PROXY_LIMIT: 1
     #    PASSWORD_COMPLEXITY: spec
 
     ## @param gitea.additionalConfigSources Additional configuration from secret or configmap
