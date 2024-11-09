@@ -465,7 +465,7 @@ gitea:
     ## @param gitea.livenessProbe.failureThreshold Failure threshold for liveness probe
     # Modify the liveness probe for your needs or completely disable it by commenting out.
     livenessProbe:
-      enabled: false
+      enabled: true
       tcpSocket:
         port: http
       initialDelaySeconds: 200
@@ -485,7 +485,7 @@ gitea:
     ## @param gitea.readinessProbe.failureThreshold Failure threshold for readiness probe
     # Modify the readiness probe for your needs or completely disable it by commenting out.
     readinessProbe:
-      enabled: false
+      enabled: true
       tcpSocket:
         port: http
       initialDelaySeconds: 5
