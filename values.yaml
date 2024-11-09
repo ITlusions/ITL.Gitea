@@ -118,7 +118,7 @@ gitea:
       clusterIP:
       loadBalancerIP:
       nodePort:
-      externalTrafficPolicy: Local
+      externalTrafficPolicy: Cluster
       externalIPs:
       ipFamilyPolicy:
       ipFamilies:
