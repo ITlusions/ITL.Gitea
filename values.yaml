@@ -182,7 +182,11 @@ gitea:
         paths:
           - path: /
             pathType: Prefix
-    tls: []
+    tls:
+      - secretName: dev-itlusions-com-tls
+        hosts:
+          - dev.itlusions.nl
+          - dev.itlusions.com
     #  - secretName: chart-example-tls
     #    hosts:
     #      - git.example.com
