@@ -178,6 +178,10 @@ gitea:
       # kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
     hosts:
+      - host: git.dev.itlusions.nl
+        paths:
+          - path: /
+            pathType: Prefix
       - host: git.dev.itlusions.com
         paths:
           - path: /
@@ -185,6 +189,7 @@ gitea:
     tls:
       - secretName: git-dev-itlusions-com-tls
         hosts:
+          - git.dev.itlusions.nl
           - git.dev.itlusions.com
     #  - secretName: chart-example-tls
     #    hosts:
