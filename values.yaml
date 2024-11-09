@@ -615,9 +615,9 @@ gitea:
   ## @param test.enabled Set it to false to disable test-connection Pod.
   ## @param test.image.name Image name for the wget container used in the test-connection Pod.
   ## @param test.image.tag Image tag for the wget container used in the test-connection Pod.
-  checkDeprecation: true
+  checkDeprecation: false
   test:
-    enabled: true
+    enabled: false
     image:
       name: busybox
       tag: latest
