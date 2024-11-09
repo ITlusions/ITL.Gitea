@@ -166,7 +166,7 @@ gitea:
   ## @param ingress.tls Ingress tls settings
   ## @extra ingress.apiVersion Specify APIVersion of ingress object. Mostly would only be used for argocd.
   ingress:
-    enabled: true
+    enabled: false
     # className: nginx
     className: traefik
     annotations:
