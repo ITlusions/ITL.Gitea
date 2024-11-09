@@ -1,13 +1,13 @@
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: dev-itlusions-com
-# spec:
-#   secretName: dev-itlusions-com-tls
-#   issuerRef:
-#     name: letsencrypt-issuer
-#     kind: ClusterIssuer
-#   commonName: dev.itlusions.com
-#   dnsNames:
-#     - dev.itlusions.nl
-#     - dev.itlusions.com
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: git-dev-itlusions-com
+spec:
+  secretName: git-dev-itlusions-com-tls
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer
+  commonName: git.dev.itlusions.com
+  dnsNames:
+    - git.dev.itlusions.nl
+    - git.dev.itlusions.com
