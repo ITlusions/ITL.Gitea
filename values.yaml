@@ -52,7 +52,7 @@ gitea:
     registry: ""
     repository: gitea/gitea
     # Overrides the image tag whose default is the chart appVersion.
-    tag: ""
+    tag: "nightly"
     digest: ""
     pullPolicy: IfNotPresent
     rootless: true
