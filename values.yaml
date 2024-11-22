@@ -1,3 +1,6 @@
+postgresql:
+  userPassword: ""  # Leave blank to generate a random password
+  superPassword: ""  # Leave blank to generate a random password
 gitea:
   # Default values for gitea.
   # This is a YAML-formatted file.

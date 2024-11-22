@@ -1,0 +1,48 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: gitea-cnpg
+spec:
+  instances: 3
+
+  bootstrap:
+    initdb:
+      database: gitea
+      owner: gitea
+      secret:
+        name: gitea-cnpg-user
+
+  enableSuperuserAccess: true
+  superuserSecret:
+    name: gitea-cnpg-superuser
+
+  storage:
+    size: 10Gi
+---
+{{- $userPassword := randAlphaNum 16 }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: gitea-cnpg-user
+type: kubernetes.io/basic-auth
+data:
+  username: {{ "app" | b64enc | quote }}
+  password: {{- if not (lookup "v1" "Secret" .Release.Namespace "gitea-cnpg-user") }}
+              {{ $userPassword | b64enc | quote }}
+            {{- else }}
+              {{ .Values.postgresql.userPassword | default $userPassword | b64enc | quote }}
+            {{- end }}
+---
+{{- $superPassword := randAlphaNum 16 }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: gitea-cnpg-superuser
+type: kubernetes.io/basic-auth
+data:
+  username: {{ "postgres" | b64enc | quote }}
+  password: {{- if not (lookup "v1" "Secret" .Release.Namespace "gitea-cnpg-superuser") }}
+              {{ $superPassword | b64enc | quote }}
+            {{- else }}
+              {{ .Values.postgresql.superPassword | default $superPassword | b64enc | quote }}
+            {{- end }}
