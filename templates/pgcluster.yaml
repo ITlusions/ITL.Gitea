@@ -26,7 +26,7 @@ metadata:
   name: gitea-cnpg-user
 type: kubernetes.io/basic-auth
 data:
-  username: {{ "app" | b64enc | quote }}
+  username: {{ "giteaadmin" | b64enc | quote }}
   password: {{- if not (lookup "v1" "Secret" .Release.Namespace "gitea-cnpg-user") }}
               {{ $userPassword | b64enc | quote }}
             {{- else }}
@@ -40,7 +40,7 @@ metadata:
   name: gitea-cnpg-superuser
 type: kubernetes.io/basic-auth
 data:
-  username: {{ "postgres" | b64enc | quote }}
+  username: {{ "sa" | b64enc | quote }}
   password: {{- if not (lookup "v1" "Secret" .Release.Namespace "gitea-cnpg-superuser") }}
               {{ $superPassword | b64enc | quote }}
             {{- else }}
