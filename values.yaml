@@ -447,11 +447,14 @@ gitea:
     #    PASSWORD_COMPLEXITY: spec
 
     ## @param gitea.additionalConfigSources Additional configuration from secret or configmap
-    additionalConfigSources: []
+    additionalConfigSources: 
+      - name: DISABLE_REGISTRATION
+        value: false
     #   - secret:
     #       secretName: gitea-app-ini-oauth
     #   - configMap:
-    #       name: gitea-app-ini-plaintext
+    #       name: gitea-app-ini
+
 
     ## @param gitea.additionalConfigFromEnvs Additional configuration sources from environment variables
     additionalConfigFromEnvs: []
