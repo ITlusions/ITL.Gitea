@@ -445,11 +445,13 @@ gitea:
         REVERSE_PROXY_TRUSTED_PROXIES: "*"
         REVERSE_PROXY_LIMIT: 1
     #    PASSWORD_COMPLEXITY: spec
+      service:
+        ENABLE_NOTIFY_MAIL: true
+        DISABLE_REGISTRATION: true
+        REQUIRE_SIGNIN_VIEW: true
 
     ## @param gitea.additionalConfigSources Additional configuration from secret or configmap
-    additionalConfigSources: 
-      - name: DISABLE_REGISTRATION
-        value: false
+    additionalConfigSources: []
     #   - secret:
     #       secretName: gitea-app-ini-oauth
     #   - configMap:
