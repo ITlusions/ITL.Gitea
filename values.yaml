@@ -437,6 +437,10 @@ gitea:
     config:
       APP_NAME: "Gitea: ITlusions - Devops - Cloud Native Implementations - Data - AI/ML"
       #  RUN_MODE: dev
+      markup:
+        ENABLED: true
+      metrics:
+        ENABLED: true
       server:
         SSH_PORT: 22 # rootful image
         SSH_LISTEN_PORT: 2222 # rootless image
@@ -449,6 +453,10 @@ gitea:
         ENABLE_NOTIFY_MAIL: true
         DISABLE_REGISTRATION: true
         REQUIRE_SIGNIN_VIEW: true
+        
+      other:
+        SHOW_FOOTER_VERSION: False
+        SHOW_FOOTER_POWERED_BY: False
 
     ## @param gitea.additionalConfigSources Additional configuration from secret or configmap
     additionalConfigSources: []
